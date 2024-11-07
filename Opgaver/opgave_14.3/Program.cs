@@ -9,10 +9,28 @@
 	new int[]{6, 7, 3, 2, 4, 5, 8, 1, 9},
 	new int[]{5, 4, 1, 8, 6, 9, 7, 2, 3},
 	};
-
-for (int i=0 ; i<9 ; i++){
-	for (int j=0 ; j<9 ; j++){
-	Console.Write("{0,3}", puzzle[i][j]);
+void print(int[][] puzzle)
+{
+	for (int row = 0 ; row<9 ; row++){
+		if (row % 3 == 0) 
+		{
+			Console.WriteLine("+- --- -+- --- -+- --- -+");
+		}
+		for (int col = 0 ; col<9 ; col++)
+		{
+			if (col % 3 == 0)
+			{
+				Console.Write("| " + puzzle[row][col] + " ");
+			}
+			else 
+			{
+				Console.Write(puzzle[row][col] + " ");
+			}
+			
+		}
+		Console.WriteLine("|");
 	}
-	Console.WriteLine("");
+	Console.WriteLine("+- --- -+- --- -+- --- -+");
 }
+
+print(puzzle);
